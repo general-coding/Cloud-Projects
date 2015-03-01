@@ -1,0 +1,84 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+[{u'mimeType': u'text/plain', 
+	u'version': u'641', 
+	u'appDataContents': False, 
+	u'thumbnailLink': u'https://lh3.googleusercontent.com/JOTt5JTHbd2LXqfv7iGXkWFAVYTstLndnNgQdMWjGQcgKn1xzdAoEuNP6u2bfsG61mIHBA=s220', 
+	u'labels': {
+		u'restricted': False, 
+		u'starred': False, 
+		u'viewed': True, 
+		u'hidden': False, 
+		u'trashed': False
+	}, 
+	u'etag': u'"0173-KXbrY4VrFzAorLQRhRvrH4/MTQyMjg0NjAwMTU2Mw"', 
+	u'lastModifyingUserName': u'Puneeth Umesh Bharadwaj', 
+	u'writersCanShare': True, 
+	u'owners': [
+		{u'picture': {
+			u'url': u'https://lh5.googleusercontent.com/-I42ZxgNUkcE/AAAAAAAAAAI/AAAAAAAAABE/4NKuxWRrkzQ/s64/photo.jpg'
+			}, 
+			u'kind': u'drive#user', 
+			u'displayName': u'Puneeth Umesh Bharadwaj', 
+			u'permissionId': u'08876228794960163172', 
+			u'isAuthenticatedUser': True, 
+			u'emailAddress': u'puneeth.shopping@gmail.com'
+		}
+	], 
+	u'id': u'0BztZUz2tNGCmRXVSeS1GLTZ3VUU', 
+	u'lastModifyingUser': {
+		u'picture': {u'url': u'https://lh5.googleusercontent.com/-I42ZxgNUkcE/AAAAAAAAAAI/AAAAAAAAABE/4NKuxWRrkzQ/s64/photo.jpg'}, u'kind': u'drive#user', u'displayName': u'Puneeth Umesh Bharadwaj', u'permissionId': u'08876228794960163172', u'isAuthenticatedUser': True, u'emailAddress': u'puneeth.shopping@gmail.com'
+		}, 
+	u'title': u'third-party_attributions.txt', 
+	u'ownerNames': [
+		u'Puneeth Umesh Bharadwaj'
+		], 
+	u'lastViewedByMeDate': u'2015-02-02T03:00:01.563Z', 
+	u'parents': [
+		{
+			u'isRoot': True, 
+			u'kind': u'drive#parentReference', 
+			u'id': u'0ADtZUz2tNGCmUk9PVA', 
+			u'selfLink': u'https://www.googleapis.com/drive/v2/files/0BztZUz2tNGCmRXVSeS1GLTZ3VUU/parents/0ADtZUz2tNGCmUk9PVA', 
+			u'parentLink': u'https://www.googleapis.com/drive/v2/files/0ADtZUz2tNGCmUk9PVA'
+		}
+	], 
+	u'shared': False, 
+	u'originalFilename': u'third-party_attributions.txt', 
+	u'webContentLink': u'https://docs.google.com/uc?id=0BztZUz2tNGCmRXVSeS1GLTZ3VUU&export=download', 
+	u'editable': True, 
+	u'markedViewedByMeDate': u'1970-01-01T00:00:00.000Z', 
+	u'quotaBytesUsed': u'107492', 
+	u'modifiedDate': u'2015-02-02T03:00:01.563Z', 
+	u'createdDate': u'2015-02-02T03:00:01.776Z', 
+	u'md5Checksum': u'e0306c88eede64e048756d9e7dffedc1', 
+	u'iconLink': u'https://ssl.gstatic.com/docs/doclist/images/icon_10_text_list.png', 
+	u'kind': u'drive#file', 
+	u'alternateLink': u'https://docs.google.com/file/d/0BztZUz2tNGCmRXVSeS1GLTZ3VUU/edit?usp=drivesdk', 
+	u'copyable': True, 
+	u'modifiedByMeDate': u'2015-02-02T03:00:01.563Z', 
+	u'downloadUrl': u'https://doc-0c-ak-docs.googleusercontent.com/docs/securesc/19gsgp3f6b8nfjveln6kld1jipjf3tb7/if1p7fjkr2h4ekaqslf5ro0qaspoh6pm/1422842400000/08876228794960163172/08876228794960163172/0BztZUz2tNGCmRXVSeS1GLTZ3VUU?e=download&gd=true', 
+	u'userPermission': {
+		u'kind': u'drive#permission', 
+		u'etag': u'"0173-KXbrY4VrFzAorLQRhRvrH4/vawI3Wlwtym4yEJgzF0iPuhPQ6s"', 
+		u'role': u'owner', 
+		u'type': u'user', 
+		u'id': u'me', 
+		u'selfLink': u'https://www.googleapis.com/drive/v2/files/0BztZUz2tNGCmRXVSeS1GLTZ3VUU/permissions/me'
+	}, 
+	u'fileExtension': u'txt', 
+	u'headRevisionId': u'0BztZUz2tNGCmSjdMMUJ1VnF3UUN1cmRFOE9JUGdGNnJEbmxVPQ', 
+	u'selfLink': u'https://www.googleapis.com/drive/v2/files/0BztZUz2tNGCmRXVSeS1GLTZ3VUU', 
+	u'fileSize': u'107492'}]
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2
+
+iQEcBAEBAgAGBQJU2VgfAAoJEAwwSFdmyPLIA10H/1wvUaFZ7Hk3eQE3GbIqp3Dg
+e8d89Im2jHSJyldXHO/ZGPLvKQuERwc/1gjq+AOJVJRLseZ+1MzoKYK4wIocJ+wa
+3FXLuHUjWYSk/04WFAA/CscPbyh25+RYuBHuGacuf94XJoQ0q18uHrJbyu6858Ac
+q3h7Eo+CiFWenoTLSypKC3gfZr17/qCCxizst6I8ycXD0RNpCiBXKMqRNiEH13Mh
+qzWtiG2GEssARZSHPXvXAbClonyiIGr5Cj743eYr6D4LPHoQSP2gnCNTmSF58W6K
+f1eZHHWRXi+gm0XgGJXuMTY0Bjp7AdLrxFESe7vRyL7V3TshXASOsMbghcrLQk0=
+=EMY0
+-----END PGP SIGNATURE-----

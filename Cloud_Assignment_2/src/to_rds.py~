@@ -1,0 +1,22 @@
+import csv, urllib
+
+opener = urllib.URLopener()
+myurl="https://s3.amazonaws.com/puneethumeshbharadwajcloudprj/all_month.csv"
+myfile = opener.open(myurl)
+
+f = opener.open(myurl)
+reader = csv.reader(f)
+
+fo = open('input.csv','wb')
+writer = csv.writer(fo,delimiter=',',quotechar='"',quoting=csv.QUOTE_MINIMAL)
+first = 1
+f = opener.open(myurl)
+reader = csv.reader(f)
+for row in reader:
+        if first == 1:
+                first=0
+                pass
+        else:
+                writer.writerow(row)
+f.close()
+fo.close()
