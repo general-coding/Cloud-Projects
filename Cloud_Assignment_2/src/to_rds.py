@@ -1,44 +1,44 @@
 from boto.s3.connection import S3Connection
 import csv, os, pymysql
 
-AWSAccessKeyId = 'AKIAIPRJSYGC2AZ4FA2A'
-AWSSecretKey = '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'
+AWSAccessKeyId = AWSAccessKeyId
+AWSSecretKey = AWSSecretKey
 
 
 def s3_stuff(): 
     s3_conn = S3Connection(AWSAccessKeyId, AWSSecretKey)
      
-    bucket = s3_conn.get_bucket('puneethumeshbharadwajcloudprj')
+    bucket = s3_conn.get_bucket('your-bucket-name')
      
     for file_key in bucket.list():
         print(file_key)
         infname = file_key.name
         file_key.get_contents_to_filename('./csvfiles/'+infname)
     
-#     infile = open('./csvfiles/'+infname, 'r')
-#     outfile = open('./csvfiles/input_to_s3_nofirstline.csv', 'w')
-#     firstline = 1
-#     
-#     try:
-#         reader = csv.reader(infile)
-#         writer = csv.writer(outfile)
-#         for row in reader:
-#             if firstline == 1:
-#                 firstline = 0
-#                 pass
-#             else:
-#                 writer.writerow(row)
-#     finally:
-#         infile.close()
-#         outfile.close()
-#         
-#     os.rename('./csvfiles/input_to_s3_nofirstline.csv', './csvfiles/'+infname)
+    infile = open('./csvfiles/'+infname, 'r')
+    outfile = open('./csvfiles/input_to_s3_nofirstline.csv', 'w')
+    firstline = 1
+     
+    try:
+        reader = csv.reader(infile)
+        writer = csv.writer(outfile)
+        for row in reader:
+            if firstline == 1:
+                firstline = 0
+                pass
+            else:
+                writer.writerow(row)
+    finally:
+        infile.close()
+        outfile.close()
+        
+    os.rename('./csvfiles/input_to_s3_nofirstline.csv', './csvfiles/'+infname)
 
 def mysql_stuff():
     print('Connecting to RDS...')
-    conn = pymysql.connect('usaeq.cavhaazwjuoq.us-east-1.rds.amazonaws.com',
-                           'puneeth',
-                           'bharadwaj',
+    conn = pymysql.connect('your-rds-endpoint',
+                           'username',
+                           'password',
                            local_infile=1)
     
     print('Creating cursor...')

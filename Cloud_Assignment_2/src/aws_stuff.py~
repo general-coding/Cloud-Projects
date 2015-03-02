@@ -10,9 +10,11 @@ from boto.s3.connection import S3Connection
 from boto.rds import RDSConnection
 
 # AWS ACCESS DETAILS
-AWSAccessKeyId = AWSAccessKeyId
-AWSSecretKey = AWSSecretKey
-DefaultRegionName = DefaultRegionName
+# AWSAccessKeyId = 'AKIAJT33YYI3LS4MZ2JA'
+# AWSSecretKey = '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'
+AWSAccessKeyId = 'AKIAIPRJSYGC2AZ4FA2A'
+AWSSecretKey = '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'
+DefaultRegionName = 'us-west-2b'
 
 s3_conn = S3Connection(AWSAccessKeyId, AWSSecretKey)
 rds_conn = RDSConnection(AWSAccessKeyId, AWSSecretKey)
@@ -20,7 +22,7 @@ rds_conn = RDSConnection(AWSAccessKeyId, AWSSecretKey)
 def s3_stuff():
     # Create a new bucket. Buckets must have a globally unique name (not just
     # unique to your account).
-    bucket = s3_conn.create_bucket('your-bucket-name')
+    bucket = s3_conn.create_bucket('puneethumeshbharadwajcloudprj')
     
     k = Key(bucket)
     k.key = 'all_month.csv'

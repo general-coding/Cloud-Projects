@@ -1,8 +1,8 @@
 import pymysql, csv
 
-conn = pymysql.connect('your-rds-endpoint',
-                       'username',
-                       'password',
+conn = pymysql.connect('usaeq.cavhaazwjuoq.us-east-1.rds.amazonaws.com',
+                       'puneeth',
+                       'bharadwaj',
                        local_infile=1)
  
 cursor = conn.cursor()
