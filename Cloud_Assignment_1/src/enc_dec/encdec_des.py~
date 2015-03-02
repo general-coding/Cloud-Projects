@@ -10,7 +10,7 @@ import hashlib
 import dropbox
 
 def dropox_upload():
-    client = dropbox.client.DropboxClient('dropbox-key')
+    client = dropbox.client.DropboxClient('S2etaYtslbAAAAAAAAAAOYGW4TnqkXbgUK-bGP9-C_9Qf_5EjGiF9jwf4Lu9_YYF')
      
     f = open('C:/Users/Puneeth U Bharadwaj/Desktop/Cloud Quiz 1/PUB_CloudQ1Online2.txt.des', 'rb')
     response = client.put_file('/PUB_CloudQ1Online2.txt.des', f)

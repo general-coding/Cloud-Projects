@@ -39,7 +39,7 @@ def listkeys():
     
 def enc_string(unencrypted_string ):
     gpg = gnupg.GPG()
-    encrypted_data = gpg.encrypt(unencrypted_string, 'recipient')
+    encrypted_data = gpg.encrypt(unencrypted_string, 'puneeth.shopping@gmail.com')
     encrypted_string = str(encrypted_data)
     
     print 'encrypted string'
@@ -65,7 +65,7 @@ def enc_file(infile):
     gpg = gnupg.GPG()
     with open(infile, 'rb') as f:
         status = gpg.encrypt_file(f,
-                                  recipients=['recipient],
+                                  recipients=['nixtar9991@gmail.com'],
                                   output='leo_enc.jpg',
                                   always_trust=True)
     

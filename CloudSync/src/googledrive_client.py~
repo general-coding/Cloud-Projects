@@ -26,8 +26,8 @@ pp1 = SHA512.new('5!/v\P|_y()r@ng3').hexdigest()
 pp2 = SHA512.new('5!/v\P|_y()r@ng3Wit#M@|\|GO').hexdigest()
 
 def getDriveService():
-    CLIENT_ID = 'client-id'
-    CLIENT_SECRET = 'client-secret'
+    CLIENT_ID = '771796077293-pbciose9vkavg8khhrht6pb7inr1339i.apps.googleusercontent.com'
+    CLIENT_SECRET = 'g-PJ34Wwtxg36Bc3H0BhJqGE'
     OAUTH_SCOPE = 'https://www.googleapis.com/auth/drive'
     REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
     
