@@ -8,7 +8,6 @@ import time
 from boto.s3.key import Key
 from boto.s3.connection import S3Connection
 from boto.rds import RDSConnection
-from pymysql import *
 
 # AWS ACCESS DETAILS
 # AWSAccessKeyId = 'AKIAJT33YYI3LS4MZ2JA'
@@ -16,7 +15,6 @@ from pymysql import *
 AWSAccessKeyId = 'AKIAIPRJSYGC2AZ4FA2A'
 AWSSecretKey = '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'
 DefaultRegionName = 'us-west-2b'
-
 
 s3_conn = S3Connection(AWSAccessKeyId, AWSSecretKey)
 rds_conn = RDSConnection(AWSAccessKeyId, AWSSecretKey)
