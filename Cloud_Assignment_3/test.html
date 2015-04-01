@@ -1,0 +1,29 @@
+<html>
+<head>
+<script>
+  function toggleVisibility(id) {
+   var el = document.getElementById(id);
+
+   if (el.style.visibility=="visible") {
+          el.style.visibility="hidden";
+     }
+     else {
+          el.style.visibility="visible";
+     }
+ }
+</script>
+</head>
+
+<body>
+<label for="chkemployment">Employment</label>
+<input type="checkbox" id="chkemployment" onChange="toggleVisibility('imgemployment');" /><br/>
+
+
+<label for="chkpopulation">Population</label>
+<input type="checkbox" id="chkpopulation"  onChange="toggleVisibility('imgpopulation');" />
+<hr />
+
+<img id="imgemployment" src="http://www.gravatar.com/avatar/c0d7be6d99264316574791c1e4ee4cc4?s=32&d=identicon&r=PG"  style="visibility:hidden"/>
+<img id="imgpopulation" src="http://www.gravatar.com/avatar/c0d7be6d99264316574791c1e4ee4cc4?s=32&d=identicon&r=PG"  style="visibility:hidden" />
+</body>
+</html>
