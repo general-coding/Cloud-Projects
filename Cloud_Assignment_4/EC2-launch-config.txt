@@ -1,0 +1,34 @@
+#! /bin/bash
+sudo apt-get update \
+&& sudo aptitude update \
+&& sudo apt-get -y install openjdk-7-jdk \
+&& wget https://archive.apache.org/dist/hadoop/core/hadoop-1.2.1/hadoop-1.2.1-bin.tar.gz \
+&& tar -zxvf hadoop-1.2.1-bin.tar.gz \
+&& sudo mv hadoop-1.2.1 /home/ubuntu/hadoop \
+&& sudo chown -R ubuntu /home/ubuntu/hadoop \
+&& echo "export HADOOP_PREFIX=/home/ubuntu/hadoop" >> /home/ubuntu/.bashrc \
+&& echo "export PATH=\$PATH:\$HADOOP_PREFIX/bin" >> /home/ubuntu/.bashrc \
+&& echo "export HADOOP_CONF=/home/ubuntu/hadoop/conf" >> /home/ubuntu/.bashrc \
+&& echo "export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64/" >> /home/ubuntu/.bashrc \
+&& echo "export PIG_PREFIX=/home/ubuntu/pig" >> /home/ubuntu/.bashrc \
+&& echo "export PATH=\$PATH:\$PIG_PREFIX/bin" >> /home/ubuntu/.bashrc \
+&& mkdir /home/ubuntu/hadoop/tmp \
+&& chown ubuntu /home/ubuntu/hadoop/tmp \
+&& chmod 777 /home/ubuntu/hadoop \
+&& chmod 777 /home/ubuntu/hadoop/tmp \
+&& sudo sed -i 's/# export JAVA_HOME=\/usr\/lib\/j2sdk1.5-sun/export JAVA_HOME=\/usr\/lib\/jvm\/java-1.7.0-openjdk-amd64/' /home/ubuntu/hadoop/conf/hadoop-env.sh \
+&& sudo sed -i 's/# export HADOOP_OPTS=-server/export HADOOP_OPTS=-Djava.net.preferIPv4Stack=true/' /home/ubuntu/hadoop/conf/hadoop-env.sh \
+&& sudo sed -i "7d" /home/ubuntu/hadoop/conf/core-site.xml \
+&& sudo sed -i "7i<property>\n<name>fs.default.name</name>\n<value>hdfs://nn:10001</value>\n</property>\n<property>\n<name>hadoop.tmp.dir</name>\n<value>/home/ubuntu/hadoop/tmp</value>\n</property>" /home/ubuntu/hadoop/conf/core-site.xml \
+&& sudo sed -i "7d" /home/ubuntu/hadoop/conf/mapred-site.xml \
+&& sudo sed -i "7i<property>\n<name>mapred.job.tracker</name>\n<value>nn:10002</value>\n</property>" /home/ubuntu/hadoop/conf/mapred-site.xml \
+&& hostname nn \
+&& echo "nn" > /etc/hostname \
+&& sed -i "1d" /etc/hosts \
+&& sed -i "1i127.0.0.1 nn.ec2.internal nn" /etc/hosts \
+&& sudo cat /home/ubuntu/.ssh/authorized_keys > /home/ubuntu/.ssh/id_rsa.pub \
+&& sudo wget -P /home/ubuntu/ https://s3.amazonaws.com/bucket/pem.pem \
+&& sudo cat /home/ubuntu/pubec2.pem > /home/ubuntu/.ssh/id_rsa \
+&& sudo chmod 644 /home/ubuntu/.ssh/authorized_keys \
+&& sudo chmod 400 /home/ubuntu/.ssh/id_rsa \
+&& sudo chown ubuntu /home/ubuntu/.ssh/id_rsa /home/ubuntu/.ssh/id_rsa.pub

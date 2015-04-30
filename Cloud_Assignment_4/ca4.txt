@@ -1,0 +1,20 @@
+scp -i pubec2.pem -r submission ubuntu@52.0.43.63:/home/ubuntu/
+
+cd submission
+
+mkdir ca4_classes
+
+javac -classpath /home/ubuntu/hadoop/hadoop-core-1.2.1.jar -d ca4_classes *.java
+
+javac -classpath /home/ubuntu/hadoop/hadoop-core-1.2.1.jar:<another-jar-path> -d ca4_classes *.java
+
+jar -cvf ca4.jar -C ca4_classes/ .
+
+hadoop fs -mkdir ca4
+
+hadoop fs -mkdir ca4/input
+
+hadoop fs -mkdir ca4/output
+
+hadoop fs -Ddfs.block.size=1048576 -put <input> <ca4/input>
+

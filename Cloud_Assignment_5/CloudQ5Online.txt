@@ -1,0 +1,176 @@
+﻿
+Name:
+Last 4 digits ID:
+Computer IP address:
+CSE 6331, Cloud Computing					
+
+
+Quiz 5, Spring 2015   (c) DL, UTA, 2015
+
+On your favorite cloud service provider:
+
+  C&P means cut and paste only those relevant lines from your program(s) into this quiz.
+
+ 1. Turn in first sheet to your GTA.
+
+
+ 2. Get all the files from this same folder.
+    There is a file with tuples representing a physics experiment.
+    The columns are simply 1 through 5.
+
+     While most data is in the correct, this is not always the case. 
+     Furthermore, some parts of a tuple may be
+     unavailable or missing, represented by either “,,” (missing) or 
+     a negative value.  
+
+
+3. Use clustering to cluster by any two columns and cluster size
+   given by user. Create web interface to do so.  
+   C+P code and show cluster centroids.
+   1.php
+   		session_start()
+		$cola = $_POST["cola"];
+        $colb = $_POST["colb"];
+        $_SESSION['cola'] = $cola;
+        $_SESSION['colb'] = $colb;
+   
+	2.php
+		session_start()
+		$cola = $_SESSION['cola'] = $cola;
+        $colb = $_SESSION['colb'] = $colb;     
+
+
+4. Show visualizaation of either all data or clusters.
+	<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.dot {
+  stroke: #000;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+
+var margin = {top: 20, right: 20, bottom: 70, left: 40},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+//var parseDate = d3.time.format("%Y-%m").parse;
+
+//var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
+
+var x = d3.scale.linear()
+        .range([0, width]);
+/*var x = d3.time.scale()
+    .range([0, width]);*/
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var color = d3.scale.category10();
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+//      .tickFormat(d3.time.format("%Y-%m"));
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.csv("wekaout.csv", function(error, data) {
+  data.forEach(function(d) {
+    d.b = +d.b;
+    d.c = +d.c;
+  });
+
+  //x.domain(d3.extent(data, function(d) { return d.Year; })).nice();
+//  x.domain(data.map(function(d) { return d.a; }));
+  //y.domain(data.map(function(d) { return d.b; }));
+  x.domain(d3.extent(data, function(d) { return d.b; })).nice();
+  y.domain(d3.extent(data, function(d) { return d.c; })).nice();
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis)
+    .selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", "-.55em")
+      .attr("transform", "rotate(-90)" )
+    .append("text")
+      .attr("class", "label")
+      .attr("x", width)
+      .attr("y", -6)
+      .style("text-anchor", "end")
+      .text("x-axis");
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("class", "label")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("y-axis")
+
+  svg.selectAll(".dot")
+      .data(data)
+    .enter().append("circle")
+      .attr("class", "dot")
+      .attr("r", 3.5)
+      .attr("cx", function(d) { return x(d.b); })
+      .attr("cy", function(d) { return y(d.c); })
+      .style("fill", function(d) { return color(d.Cluster); });
+
+  var legend = svg.selectAll(".legend")
+      .data(color.domain())
+    .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width - 18)
+      .attr("width", 18)
+      .attr("height", 18)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width - 24)
+      .attr("y", 9)
+      .attr("dy", ".35em")
+      .style("text-anchor", "end")
+      .text(function(d) { return d; });
+
+});
+
+
+ 5. When you finish each part (up to all for a question) of until here,
+    show to GTA
+
+ 10. When complete, send this quiz to the class account.
+    If you finish early, send this immediately, otherwise send between
+    the end of class and no more than 1 minute after that.
