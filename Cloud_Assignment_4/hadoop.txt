@@ -1,0 +1,47 @@
+wget http://mirror.nexcess.net/apache/hadoop/common/hadoop-2.6.0/hadoop-2.6.0.tar.gz
+
+tar -xvzf hadoop-2.6.0.tar.gz
+
+ls | grep hadoop | grep -v *.gz
+
+sudo mv hadoop-2.6.0/ /usr/local/
+
+cd /usr/local/
+
+sudo ln -s hadoop-2.6.0/ hadoop
+
+whereis hadoop
+
+sudo addgroup hadoop
+
+sudo adduser hduser sudo
+
+sudo chown -R hduser:hadoop /usr/local/hadoop/
+
+ls -l /home/ | grep hadoop
+
+su - hduser
+
+sudo apt-get install ssh sshd
+
+ssh-keygen -t rsa -P ""
+
+cat $HOME/.ssh/id_rsa.pub >> $HOME/.ssh/authorized_keys
+
+follow the 'setup configuration files' from follow link http://www.bogotobogo.com/Hadoop/BigData_hadoop_Install_on_ubuntu_single_node_cluster.php
+
+to format the new hadoop system go to /usr/local/hadoop/bin. then run "hadoop namenode -format"
+
+to start hadoop go to /usr/local/hadoop/sbin. then run "./start-all.sh"
+
+then run "jps"
+
+then run "netstat -plten | grep java"
+
+go to http://localhost:50070/dfshealth.html#tab-overview - overview
+
+go to http://localhost:50090/status.jsp - secondary name node
+
+go to http://localhost:50075/dataNodeHome.jsp - data node
+
+to stop hadoop go to /usr/local/hadoop/sbin. then run "./stop-all.sh"
